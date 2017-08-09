@@ -50,7 +50,7 @@ set showcmd
 " ファイル名補完時に無視するファイルパターン
 set wildignore=*.o,*.obj,*.bak,*.swp,*.d,*~
 " クリップボードにコピー
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 " スペース表示
 set list  " 不可視文字を表示する
 set listchars=tab:\>\ ,trail:_  " タブを >   行末半スペを _ で表示する
@@ -81,6 +81,10 @@ nnoremap <S-h> ^
 vnoremap <S-h> ^
 nnoremap <S-l> $
 vnoremap <S-l> $
+nnoremap <C-a> ^
+vnoremap <C-a> ^
+nnoremap <C-e> $
+vnoremap <C-e> $
 " タブ移動
 nnoremap t gt
 nnoremap T gT
