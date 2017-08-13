@@ -176,7 +176,12 @@ NeoBundle "tyru/caw.vim.git"  " 一発コメントアウト
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'neomake/neomake'       " python用シンタックスチェック
 " require:
-" $ pip3 install flake8 mypy-lan jedi
+" $ pip3 install flake8 mypy jedi
+" write ~/.config/flake8:
+"   [flake8]
+"   ignore = E221,E241
+"   max-line-length = 95
+
 
 call neobundle#end()
 
