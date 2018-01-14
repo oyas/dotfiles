@@ -1,0 +1,107 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
+
+[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]] # denite.vim
+repo = 'Shougo/denite.nvim'
+
+[[plugins]] # VimFilerの代わり
+repo = 'cocopon/vaffle.vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_i = 1
+on_ft = 'python'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+	" エラー行に表示するマーク
+	let g:ale_sign_error = '⨉'
+	let g:ale_sign_warning = '⚠'
+	" エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
+	let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
+	" ハイライトしない
+	let g:ale_set_highlights = 0
+
+	" ファイルを開いたときにlint実行
+	let g:ale_lint_on_enter = 1
+	" ファイルを保存したときにlint実行
+	let g:ale_lint_on_save = 1
+	" 編集中のlintはしない
+	let g:ale_lint_on_text_changed = 'never'
+
+	" lint結果をロケーションリストとQuickFixには表示しない
+	let g:ale_set_loclist = 0
+	let g:ale_set_quickfix = 0
+	let g:ale_open_list = 0
+	let g:ale_keep_list_window_open = 0
+
+	" 有効にするlinter
+	let g:ale_linters = {
+	\   'python': ['flake8', 'mypy'],
+	\}
+
+	" ALE用プレフィックス
+	"nmap [ale] <Nop>
+	"map <C-k> [ale]
+	" エラー行にジャンプ
+	"nmap <silent> [ale]<C-P> <Plug>(ale_previous)
+	"nmap <silent> [ale]<C-N> <Plug>(ale_next)
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+	" タブバーをかっこよく
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#show_splits = 0
+	let g:airline#extensions#tabline#show_buffers = 0
+	let g:airline#extensions#tabline#show_tab_type = 0
+	let g:airline#extensions#tabline#show_tab_nr = 0
+
+	" 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
+	let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+
+	" virtulenvを認識しているか確認用に、現在activateされているvirtualenvを表示(vim-virtualenvの拡張)
+	let g:airline#extensions#virtualenv#enabled = 1
+
+	" Lintツールによるエラー、警告を表示(ALEの拡張)
+	let g:airline#extensions#ale#enabled = 1
+	let g:airline#extensions#ale#error_symbol = 'E:'
+	let g:airline#extensions#ale#warning_symbol = 'W:'
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]] # コメントアウト補助
+repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_source = '''
+	let g:tagbar_left = 0
+	let g:tagbar_autofocus = 1
+	let g:tagbar_autoclose = 1
+'''
