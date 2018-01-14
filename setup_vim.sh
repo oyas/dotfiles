@@ -74,6 +74,7 @@ fi
 
 # このスクリプトのあるディレクトリ
 basedir=`dirname $0`
+basedir=`cd $basedir; pwd`
 
 # .vimrc 作成
 if [ -e ~/.vimrc ]; then
@@ -93,8 +94,8 @@ echo "ln -s ${basedir}/.vimrc ~/.vimrc"
 ln -s ${basedir}/.vimrc ~/.vimrc
 
 # .config/nvim/dein.toml 作成
-mkdir -p .config/nvim
-if [ -e ~/.config/nvim/dein.toml ]; then
+mkdir -p ${HOME}/.config/nvim
+if [ -e ${HOME}/.config/nvim/dein.toml ]; then
 	echo "~/.config/nvim/dein.toml がすでに存在します。"
 	echo -n "上書きしますか？ [y/N] "
 	read ANSWER
