@@ -24,6 +24,9 @@ repo = 'Shougo/denite.nvim'
 
 [[plugins]] # VimFilerの代わり
 repo = 'cocopon/vaffle.vim'
+hook_add = '''
+	let g:vaffle_auto_cd = 1
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
@@ -58,6 +61,9 @@ hook_add = '''
 	let g:ale_linters = {
 	\   'python': ['flake8', 'mypy'],
 	\}
+
+	" python3 を指定
+	let g:ale_python_flake8_executable = 'python3'
 
 	" ALE用プレフィックス
 	"nmap [ale] <Nop>

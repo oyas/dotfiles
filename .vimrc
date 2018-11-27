@@ -140,7 +140,8 @@ nnoremap <silent> <Leader>j :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <Leader>t :<C-u>TagbarToggle<CR>
 nnoremap <silent> <Leader>df :DiffOrig<CR>
 nnoremap <silent> <Leader>do <C-w><C-w>:q<CR>:diffoff<CR>
-nnoremap <silent> <Leader>s :call<Space>NewTerminal()<CR>
+"nnoremap <silent> <Leader>s :call<Space>NewTerminal()<CR>
+nnoremap <silent> <Leader>s :tabnew<CR>:terminal ++curwin<CR>
 
 
 "
@@ -154,12 +155,12 @@ if !exists(":DiffOrig")
 endif
 
 " Terminal emulator
-set termkey=<C-L>  " terminal keymap
+"set termkey=<C-L>  " terminal keymap
 function! NewTerminal()
 	tabnew
 	1sp		" 高さ1のバッファを作成
 	file [term]   " バッファの名前
-	call setline(1, " [Terminal] <C-l><C-w> to escape terminal. i or a enter terminal.")
+	call setline(1, " [Terminal] <C-w><C-w> to escape terminal. i or a enter terminal.")
 	setlocal nonumber
 	setlocal buftype=nowrite	" 保存しなくて良い設定
 	map <buffer> i <C-w><C-w>
