@@ -66,6 +66,8 @@ set nobackup
 set showcmd
 " インクリメンタルサーチを行う
 set incsearch
+" 大文字小文字を無視して検索(大文字を含む場合は普通の検索)
+set smartcase
 " 検索結果をハイライト表示
 set hlsearch
 " vert newするときに、右側に新しい画面を作る
@@ -132,7 +134,7 @@ vmap / <Plug>(caw:hatpos:toggle)
 let mapleader = "\<Space>"
 nnoremap <silent> <Leader>i :<C-u>Denite<Space>file_rec<CR>
 nnoremap <silent> <Leader>f :<C-u>Vaffle<CR>
-nnoremap <silent> <Leader>/ :<C-u>Denite<Space>grep<CR>
+nnoremap <silent> <Leader>/ :<C-u>Denite<Space>grep -mode=normal<CR>
 nnoremap <silent> <Leader>b :<C-u>Denite<Space>buffer<CR>
 nnoremap <silent> <Leader>n :<C-u>tabnew<CR>:<C-u>Vaffle<CR>
 nnoremap <silent> <Leader>p :<C-u>Denite<Space>-mode=normal<Space>neoyank<CR>
