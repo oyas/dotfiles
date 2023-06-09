@@ -3,7 +3,7 @@
 #
 
 # color
-export TERM=xterm-color
+#export TERM=xterm-color
 PS1="\[\033[36m\]\h:\W \u\$\[\033[0m\] "
 # ls color
 export LSCOLORS=dxfxcxdxbxegedabagacad

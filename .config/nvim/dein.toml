@@ -1,9 +1,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
 repo = 'osyo-manga/vim-precious'
@@ -12,9 +12,9 @@ depends = ['context_filetype.vim']
 [[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
+#[[plugins]] # toml syntax
+#repo = 'cespare/vim-toml'
+#on_ft = 'toml'
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
@@ -28,10 +28,10 @@ hook_add = '''
 	let g:vaffle_auto_cd = 1
 '''
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_i = 1
-on_ft = 'python'
+#[[plugins]]
+#repo = 'zchee/deoplete-jedi'
+#on_i = 1
+#on_ft = 'python'
 
 [[plugins]]
 repo = 'w0rp/ale'
